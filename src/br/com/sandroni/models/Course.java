@@ -30,5 +30,14 @@ public class Course {
 		this.listLesson.add(lesson);
 	}
 	
+	public int getTotalTime() {
+		return listLesson.stream().mapToInt(Lesson::getTime).sum();
+	}
+	
+	@Override
+	public String toString() {
+		return "{Title:"+this.title+", Teacher:"+this.teacher+", Time Total:"+this.getTotalTime()+", Lessons:"+this.listLesson+"}";
+	}
+	
 	
 }
